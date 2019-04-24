@@ -12,13 +12,18 @@ import { leaguesMock } from '../service/mock/leagues-mock';
 export class TeamListComponent implements OnInit {
 
   teams: Team[] = [];
-  leagues: League[] = [];
+  leagues: Map<string, string> = new Map();
 
   constructor() { }
 
   ngOnInit() {
-    this.leagues = [...leaguesMock.map((league: League) => ({...league}))];
     this.teams = [...teamsMock.map((team: Team) => ({...team}))];
+    this.getLeagues();
+  }
+
+  getLeagues() {
+    const leaguesList = [...leaguesMock.map((league: League) => ({...league}))];
+    leaguesList.forEach((league: League) => this.leagues.set(league.leagueCode, league.name));
   }
 
 }

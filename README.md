@@ -1,27 +1,37 @@
-# FutbolTeamsRedux
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.9.
+# What is Redux?
+Redux is a predictable state container for JavaScript apps.
+Redux is a design pattern.
+Redux can used with Angular, react or any other library for Javascript.
 
-## Development server
+Redux has several components, but the necessary components that should be used are:
+Actions, reducer and store .
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Actions
+The actions indicate what to do.
+Actions must be triggered through synchronous functions.
+With Ngrx we trigger the actions through dispatch method.
 
-## Code scaffolding
+# Reducer
+If the actions say what to do, the reducer indicates how to do it
+Reducer is a function that indicates how to do.
+It is important to clone all objects in the reducer, it is not convenient to work with the same memory reference.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Store
+The store is the memory where we have all states
+This is a volatile memory, not a persistent memory, if we want to conserve data, we can use the storage, indexeddb or the browser cache.
 
-## Build
+# Effects
+Effects are functions that allow us to trigger actions when we work with asynchronous methods.
+One of the actions is captured by an effect function, wait for the asynchronous response and then activate another function.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# When to use Redux?
+se the same information in multiples components. (for example session data, typelist, etc)
+Actions of the components that may affect another component. (for example: configuration data)
+Others: https://medium.com/@fastphrase/when-to-use-redux-f0aa70b5b1e2
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+#Redux - Ngrx
+npm i @ngrx/store@6.1.2 --save-dev
+npm install @ngrx/store-devtools@6.1.2 --save-dev
+npm install @ngrx/effects@6.1.2 --save-dev

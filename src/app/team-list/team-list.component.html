@@ -1,16 +1,16 @@
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Points</th>
-      <th>League</th>
+      <th scope="col">Name</th>
+      <th scope="col">Points</th>
+      <th scope="col">League Name</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let team of teams">
-      <td>{{team.name}}</td>
-      <td>{{team.points}}</td>
-      <td>Name</td>
+      <td scope="row">{{team.name}}</td>
+      <td scope="row">{{team.points}}</td>
+      <td scope="row">{{leagues.get(team.leagueCode)}}</td>
     </tr>
   </tbody>
 </table>
