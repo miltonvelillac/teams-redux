@@ -10,7 +10,7 @@ export const leaguesMock: League[] = [
     {
         name: 'Premier League',
         country: 'England',
-        check: true,
+        check: false,
         leagueCode: '001'
     }
 ];
